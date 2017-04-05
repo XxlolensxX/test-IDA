@@ -1,3 +1,26 @@
+<?php if (isset($_POST[enviar]) && $_POST[Enviar]) {
+	
+$destinatario = "Nombre del usuario<ulises.arratia@gmail.com>";
+
+$asunto = "Contacto desde la página Web";
+
+$cuerpo = "El cliente " . utf8_encode($_POST[nombre]). " <" . $_POST[email] ."> ha enviado un mensaje:
+
+	Asunto: ".utf8_encode($_POST[tipo-consulta]).";
+	".utf8_encode($_POST[mensaje])."
+	pase un buen día.
+	";
+
+$cabecera = "From: <correo@dedondeviene.cl>\n\r";
+$cabecera.= "Return-Path: <ulises.arratia@gmail.com>";
+
+if (mail($destinatario,$asunto,$cuerpo,$cabecera) ) {
+	$ok = "correo enviado";
+} else {
+	$error = "error al enviar el mensaje";
+}
+
+} ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,13 +36,16 @@
 </head>
 <body>
     <div class="contenedor">
+        <!-- codigo para mostrar el envio de los datos -->
+        <?php print_r($_POST) ;?>
+        <!-- codigo para mostrar el envio de los datos -->
         <div class="cabezera">
             <h2>CONTACTO</h2>
             <h3>Si quieres emprender un negocio nosotros te ayudamos a cumplir tus metas</h3>
         </div>
         <div class="contenedor-columnas">
         <div class="colum-izq">
-            <form action="" id="formulario-contacto" method="post">
+            <form action id="formulario-contacto" method="post">
                 <fieldset>
                 <div class="item-formulario">
                     <label for="nombre">Nombre</label>
@@ -84,6 +110,13 @@
         </div>
         </div>
     </div>
+    <?php if($error) { ?>
+<div class="alert">
+  <h5>Alerta!</h5>
+  
+</div>
+
+<?php } ?>
 
 </body>
 
@@ -110,3 +143,6 @@
 	});
 	</script>
 </html>
+
+
+
