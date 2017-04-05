@@ -1,0 +1,128 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #e4e9ed;
+}
+
+a {
+    color: #0070ce;
+}
+
+.contenedor {
+    width: 95%;
+    margin: 0 auto;
+}
+
+.cabezera {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cabezera h2 {
+    padding: 30px 0;
+    font-size: 30px;
+}
+
+.contenedor-columnas {
+    margin-top: 30px;
+}
+
+.colum-izq, .colum-der {
+    width: 50%;
+    float: left;
+}
+
+fieldset {
+    border: none;
+}
+
+.item-formulario {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 30px;
+}
+
+small {
+    color: #666;
+}
+
+span {
+    font-weight: bold;
+}
+
+label {
+    font-style: italic;
+}
+
+input, textarea, select {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid black;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+input,select {
+    width: 60%;
+}
+
+textarea {
+    width: 80%;
+}
+
+textarea::-webkit-input-placeholder, input::-webkit-input-placeholder{
+    color: #c1c3c6;
+}
+
+textarea::-moz-placeholder, input::-moz-placeholder{
+    color: #c1c3c6;
+}
+
+select {
+    border-radius: 0;
+}
+
+.enviar {
+    display: flex;
+    flex-direction: column;
+}
+
+.boton {
+    width: 50%;
+    border: #0070ce solid 2px;
+    border-radius: 50px;
+    cursor: pointer;
+    color: #0070ce;
+    padding: 10px 0;
+    font-size: 1em;
+}
+
+.boton:hover {
+    background-color:#0070ce;
+    color: white;
+}
+
+.item-detalle {
+    display: flex;
+    padding: 10px 0;
+}
+
+.item-detalle i {
+    padding-right: 10px;
+    font-size: 20px;
+}
+
+/* CSS validador */
+.alert {
+  display: none;
+}
+
+.parsley-errors-list {
+  color: #e74c3c;
+}
+
